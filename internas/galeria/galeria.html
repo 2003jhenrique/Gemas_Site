@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Galeria-de-Joias</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site construído na aula da disciplina de Introdução à Web">
+    <meta name="keywords" content="apple, iphone, smartphone">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="shortcut icon" href="imagens/logo_apple_preto.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="plugins/jquery.bxslider.css">
+    <link rel="stylesheet" href="plugins/magnific-popup.css">
+    <script src="plugins/jquery.min.js"></script>
+    <script src="plugins/jquery.bxslider.min.js"></script>
+    <script src="plugins/jquery.magnific-popup.js"></script>
+    
+    
+    <script>
+
+       $(document).ready(function(){
+      $('.slider') .bxSlider({
+    mode: 'fade',
+  
+    auto: true,
+    pager: true,
+  
+  });;
+
+  $('#galeria-fotos').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		image: {
+			verticalFit: true,
+			titleSrc: function(item) {
+				return item.el.attr('title');
+			}
+		},
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, 
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+		
+	});
+    });
+  </script>
+
+</head>
+
+<body>
+
+   
+
+    <section id="fotos">
+        <div class="container">
+            <h2 class="titulo-secao">Surprenda com a nossa coleçao de joias</h2>
+            <div id="galeria-fotos">
+                <a href="imagens/fotos/fotosg/1.jpg" title="Foto 01"><img src="imagens/fotos/fotosp/1.jpg" alt=""></a>
+                <a href="imagens/fotos/fotosg/1.jpg" title="Foto 02"><img src="imagens/fotos/fotosp/10.jpg" alt=""></a>
+                <a href="imagens/fotos/fotosg/11.jpg" title="Foto 03"><img src="imagens/fotos/fotosp/11.jpg" alt=""></a>
+                <a href="imagens/fotos/fotosg/12.jpg" title="Foto 04"><img src="imagens/fotos/fotosp/12.jpg" alt=""></a>
+                <a href="imagens/fotos/fotosg/2.jpg" title="Foto 05"><img src="imagens/fotos/fotosp/2.jpg" alt=""></a>
+                <a href="imagens/fotos/fotosg/5.jpg" title="Foto 06"><img src="imagens/fotos/fotosp/5.jpg" alt=""></a>
+                <a href="imagens/fotos/fotosg/6.jpg" title="Foto 07"><img src="imagens/fotos/fotosp/6.jpg" alt=""></a>
+                <a href="imagens/fotos/fotosg/7.jpg" title="Foto 08"><img src="imagens/fotos/fotosp/7.jpg" alt=""></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="video">
+        <div class="container">
+            <h2 class="titulo-secao">Apresentamos uma de nossas novidades</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/r3_wHyIo4o0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+</body>
+
+</html>
